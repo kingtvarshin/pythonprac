@@ -30,8 +30,6 @@ class Snakegrp:
                 print("oops you landed on a snake! you are on tile: " + str(x.tail))
                 player.tile = x.tail
 
-
-
 class Ladder:
     def __init__(self,top,bottom):
         self.top = top
@@ -95,8 +93,7 @@ class Board:
                     x.tile += diecount
                     snakes.snakecheck(x)
                     ladder.laddercheck(x)
-
-        
+      
 #functions
 #welcome message
 def welcome_msg(boardsize):
@@ -108,7 +105,6 @@ def welcome_msg(boardsize):
     print(msg)
 
 #execution
-
 boardsize = 100
 diceno = 1
 board = Board(boardsize)
@@ -122,42 +118,3 @@ for x in range(int(no_of_player)):
 board.playerlist = playerlist
 welcome_msg(boardsize)
 board.playerscheck()
-
-
-
-
-"""
-p1 = input("enter name of player1: ")
-while p1 == "":
-    p1 =input("enter valid player1 name: ")
-p2 = input("enter name of player2: ")
-while p2 == "":
-    p2 = input("enter valid player2 name: ")
-player1 = Player(p1)
-player2 = Player(p2)
-print(player1.name,player2.name)
-welcome_msg(player1.name,player2.name)
-
-while player1.tile < 100 and player2.tile < 100 :
-    input(player1.name + ": Press enter to roll the dice: you are on tile: "+ str(player1.tile))
-    dice_no = diceroll()
-    if (player1.tile + dice_no) > 100:
-        print("you need " + str(100-player1.tile) + " on the dice to win")
-    else:
-        player1.tile += dice_no
-    input(player2.name + ": Press enter to roll the dice: you are on tile: "+ str(player2.tile))
-    dice_no = diceroll()
-    if (player2.tile + dice_no) > 100:
-        print("you need " + str(100-player2.tile) + " on the dice to win")
-    else:
-        player2.tile += dice_no
-
-#player2 = Player("ram")
-#player1.printtile()
-#player1.tile = 10
-player1.printtile()
-player2.printtile()
-
-"""
-
-
